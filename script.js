@@ -1,9 +1,12 @@
-let liczbauczniow = 30;
-let nrodp;
 
+
+const losob = document.querySelector('.osoby');
 const startbtn = document.querySelector('.start');
 const text = document.querySelector('.tekst');
+const zakres = document.querySelector('.zakres');
 
+let liczbauczniow = 30;
+let nrodp;
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -11,6 +14,8 @@ function sleep(ms) {
 function getRandomSleepTime() {
     return Math.floor(Math.random() * 1001) + 800;
 }
+
+
 
 async function updateClasses(nrodp) {
     let numberElements = document.querySelectorAll("[class^='number']");
@@ -71,6 +76,13 @@ async function waitM() {
 startbtn.addEventListener('click', (e)=>{
     waitM();
 
+})
+
+losob.addEventListener('keypress', (e)=>{
+    if(e.key === 'Enter'){
+        liczbauczniow = losob.value;
+        zakres.innerHTML="aktualny zakres do: "+liczbauczniow;
+    }
 })
 
     
