@@ -1,12 +1,13 @@
-
-
 const losob = document.querySelector('.osoby');
 const startbtn = document.querySelector('.start');
 const text = document.querySelector('.tekst');
 const zakres = document.querySelector('.zakres');
+const tenna = document.querySelector('.tenna');
 
 let liczbauczniow = 30;
 let nrodp;
+let anttena = 1;
+let anttenacheck = 1;
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -14,7 +15,7 @@ function sleep(ms) {
 function getRandomSleepTime() {
     return Math.floor(Math.random() * 1001) + 800;
 }
-
+tennataniec();
 
 
 async function updateClasses(nrodp) {
@@ -74,8 +75,8 @@ async function waitM() {
 }
 
 startbtn.addEventListener('click', (e)=>{
+    tennataniec();
     waitM();
-
 })
 
 losob.addEventListener('keypress', (e)=>{
@@ -85,4 +86,10 @@ losob.addEventListener('keypress', (e)=>{
     }
 })
 
-    
+function tennataniec(){
+    do{
+        anttena=Math.floor(Math.random() * 5) + 1;
+    }while(anttenacheck == anttena)
+    anttenacheck = anttena;
+    tenna.innerHTML="<img src='tenna"+anttena+".gif' alt='(ANT)Tenna'>";
+}    

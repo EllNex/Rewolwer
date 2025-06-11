@@ -7,6 +7,7 @@ body{
 }
 header{
     text-align: center;
+    
 }
 .start{
     border: none;
@@ -59,7 +60,14 @@ header{
     padding-right: 10%;
     font-size: 400%;
 }
-
+.lewy{
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    width: 80%;
+}
+.tenna{
+    width: 200px;
+}
 h1{
     font-family: system-ui;
 }
